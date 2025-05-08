@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="lib/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="lib/kePrint-0.0.1/kePrint.js"></script>
+<link href="lib/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+</head>
+<body>
+<table class="table table-striped" style="font-size: 9px; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption style="font-size: initial !important;">Effect of Regional Clustering on Standard Errors (DiD Treatment Effect)</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Model </th>
+   <th style="text-align:right;"> Coefficient </th>
+   <th style="text-align:right;"> Standard SE </th>
+   <th style="text-align:right;"> Standard p </th>
+   <th style="text-align:right;"> Clustered SE </th>
+   <th style="text-align:right;"> Clustered p </th>
+   <th style="text-align:right;"> SE Ratio </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Wave 2 DiD </td>
+   <td style="text-align:right;"> -0.301 </td>
+   <td style="text-align:right;"> 0.116 </td>
+   <td style="text-align:right;"> 0.009 </td>
+   <td style="text-align:right;"> 0.157 </td>
+   <td style="text-align:right;"> 0.056 </td>
+   <td style="text-align:right;"> 1.36 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Wave 3 DiD </td>
+   <td style="text-align:right;"> -0.128 </td>
+   <td style="text-align:right;"> 0.132 </td>
+   <td style="text-align:right;"> 0.335 </td>
+   <td style="text-align:right;"> 0.239 </td>
+   <td style="text-align:right;"> 0.594 </td>
+   <td style="text-align:right;"> 1.81 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span> <sup></sup> Coefficient is for 'Treat x Post' interaction term, representing the program's causal effect. SE Ratio = Clustered SE / Standard SE. Values &gt;1 indicate clustering increases standard errors. Wave 2 effect changes from significant (p&lt;0.01) to marginally significant (p≈0.056).</td></tr></tfoot>
+</table> <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"]]}})</script><script async src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

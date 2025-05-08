@@ -1,0 +1,3 @@
+"0","if (requireNamespace(""futile.logger"", quietly = TRUE) && exists(""flog.info"")) {"
+"0","  flog.info(""R Markdown execution finished."")"
+"0","}"

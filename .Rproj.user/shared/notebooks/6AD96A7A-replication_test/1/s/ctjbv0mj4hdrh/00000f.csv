@@ -1,0 +1,15 @@
+"0","# --- Stop logging R console output ---"
+"0","if (exists(""log_file_con_rmd"") && !is.null(log_file_con_rmd) && isOpen(log_file_con_rmd)) {"
+"0","  message(paste(""Stopping R output logging to:"", attributes(log_file_con_rmd)$description))"
+"0","  sink(type = ""message"") # Stop sinking messages"
+"0","  sink(type = ""output"")  # Stop sinking standard output"
+"0","  close(log_file_con_rmd)"
+"0","  message(""R log file closed."")"
+"0","} else {"
+"0","  message(""Log file connection was not active or valid. No R log file to close."")"
+"0","}"
+"2","Stopping R output logging to: 
+"
+"2","R log file closed.
+"
+"0","# --- End logging closure ---"

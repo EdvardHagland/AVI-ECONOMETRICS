@@ -1,0 +1,7 @@
+"0",""
+"0","# For reference, also show the detailed coefficient info for Wave 2"
+"0","# Store the detailed output to display it as formatted text"
+"0","w2_std <- coef(summary(asp.did.w2))[""treat.dum:post.dum"",]"
+"0","w2_robust <- coeftest(asp.did.w2, vcov = vcovCL(asp.did.w2, cluster = w2_data$Region))[""treat.dum:post.dum"",]"
+"2","Error: object 'w2_data' not found
+"

@@ -1,0 +1,39 @@
+"0","# Extract key coefficients and format them for display"
+"0","wgt_coef <- round(coef(summary(asp.did.w2))[""treat.dum:post.dum"", ""Estimate""], 3)"
+"0","wgt_se <- round(coef(summary(asp.did.w2))[""treat.dum:post.dum"", ""Std. Error""], 3)"
+"0","unwgt_coef <- round(coef(summary(asp.did.w2_unw))[""treat.dum:post.dum"", ""Estimate""], 3)"
+"0","unwgt_se <- round(coef(summary(asp.did.w2_unw))[""treat.dum:post.dum"", ""Std. Error""], 3)"
+"0","orig_coef <- -0.301  # From Table 2 in the original paper (basepaper.md, line ~876)"
+"0",""
+"0","cat(paste0("
+"0","  ""\n## Table 2 Replication Approach\n\n"","
+"0","  ""We modified the original Table 2 presentation by separating Wave 2 and Wave 3 results into Tables 2a and 2b for clearer interpretation. "","
+"0","  ""The original paper presented all four models in a single table, making it harder to distinguish between short-term and longer-term effects.\n\n"","
+"0","  ""We also added unweighted difference-in-differences (DiD) models alongside the original weighted specifications. "","
+"0","  ""This addition serves as a robustness check to determine whether the results depend on the inverse probability weighting (IPW) scheme. "","
+"0","  ""Weighted models can be sensitive to how weights are constructed, especially in panel data where dropout patterns might differ between treatment and control groups.\n\n"","
+"0","  ""Notably, our weighted and unweighted Wave 2 DiD models show virtually identical results (Treat x Post coefficient: Weighted = "", wgt_coef, "", Unweighted = "", unwgt_coef, "", "","
+"0","  ""with nearly identical standard errors: Weighted SE = "", wgt_se, "", Unweighted SE = "", unwgt_se, ""). "","
+"0","  ""This similarity suggests that attrition in the study was essentially random with respect to treatment status and outcomes, meaning the weighting procedure had negligible impact. "","
+"0","  ""This strengthens confidence in the robustness of the findings, as they're consistent regardless of whether weights are applied. "","
+"0","  ""Both estimates now closely match the original paper's coefficient ("", orig_coef, "").\n\n"","
+"0","  ""This similarity raises the question of whether the original authors' use of inverse probability weighting added unnecessary methodological complexity, given its minimal effect on results. "","
+"0","  ""Our robustness check strengthens confidence in the paper's conclusions about program effects on migration aspirations, as the treatment effects aren't merely artifacts of the weighting method.\n\n"","
+"0","  ""Models 2a/4a use the Inverse Probability Weights (`wt2`/`wt3`) provided by the authors to account for potential attrition bias. "","
+"0","  ""As noted in the Data Description, the specific method for generating these weights is not detailed in the codebooks, which limits our ability to fully assess their construction. "","
+"0","  ""However, the similarity between weighted and unweighted results (Models 2a vs. 2b; 4a vs. 4b), along with the attrition analysis showing no significant prediction of non-response by treatment status, suggests that weighting has minimal impact on the conclusions. "","
+"0","  ""Future work could involve requesting the weight generation code or exploring alternative weighting schemes."","
+"0","  ""This strengthens confidence in the robustness of the findings regarding the transient negative effect on migration aspirations (significant in Wave 2, insignificant in Wave 3), as the effect appears robust to weighting and is consistent with the original paper."""
+"0","))"
+"1","
+## Table 2 Replication Approach
+
+We modified the original Table 2 presentation by separating Wave 2 and Wave 3 results into Tables 2a and 2b for clearer interpretation. The original paper presented all four models in a single table, making it harder to distinguish between short-term and longer-term effects.
+
+We also added unweighted difference-in-differences (DiD) models alongside the original weighted specifications. This addition serves as a robustness check to determine whether the results depend on the inverse probability weighting (IPW) scheme. Weighted models can be sensitive to how weights are constructed, especially in panel data where dropout patterns might differ between treatment and control groups.
+
+Notably, our weighted and unweighted Wave 2 DiD models show virtually identical results (Treat x Post coefficient: Weighted = -0.301, Unweighted = -0.298, with nearly identical standard errors: Weighted SE = 0.116, Unweighted SE = 0.115). This similarity suggests that attrition in the study was essentially random with respect to treatment status and outcomes, meaning the weighting procedure had negligible impact. This strengthens confidence in the robustness of the findings, as they're consistent regardless of whether weights are applied. Both estimates now closely match the original paper's coefficient (-0.301).
+
+This similarity raises the question of whether the original authors' use of inverse probability weighting added unnecessary methodological complexity, given its minimal effect on results. Our robustness check strengthens confidence in the paper's conclusions about program effects on migration aspirations, as the treatment effects aren't merely artifacts of the weighting method.
+
+Models 2a/4a use the Inverse Probability Weights (`wt2`/`wt3`) provided by the authors to account for potential attrition bias. As noted in the Data Description, the specific method for generating these weights is not detailed in the codebooks, which limits our ability to fully assess their construction. However, the similarity between weighted and unweighted results (Models 2a vs. 2b; 4a vs. 4b), along with the attrition analysis showing no significant prediction of non-response by treatment status, suggests that weighting has minimal impact on the conclusions. Future work could involve requesting the weight generation code or exploring alternative weighting schemes.This strengthens confidence in the robustness of the findings regarding the transient negative effect on migration aspirations (significant in Wave 2, insignificant in Wave 3), as the effect appears robust to weighting and is consistent with the original paper."
